@@ -62,5 +62,3 @@ if (!availableRouters.contains(_params.router)) {
 所以當駭客透過 proxy 調用 USDC contract 時, 對 USDC 來說, msg.sender 是 proxy(有被 user approve), 那駭客便可以利用`functionCallWithValue`去 call `transferFrom`, 進而把用戶的 USDC 轉走
 
 ---
-
-這個 proxy 設計缺陷在於, 他擁有的權限太大了, 讓用戶 approve 權限給一個不安全的 proxy 合約.
